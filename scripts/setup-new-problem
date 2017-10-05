@@ -1,0 +1,276 @@
+#!/bin/bash
+
+function usage_msg {
+	echo "Usage: $0 {option}"
+	echo
+	echo "option:"
+	echo "   -n|--name    The name of the problem"
+	echo "                You can use namespace format here"
+	echo "   -h|--help    Print help message"
+}
+
+function error_arg {
+	usage_msg
+	exit 1
+}
+
+function set_name {
+	[[ ! "$1" =~ ^\- ]] && export problem_ns="$1"
+}
+
+function create_source_dir {
+	# create src dir
+	src_dir="src/${problem_ns//::/\/}"
+	mkdir -p "${src_dir}"
+}
+
+function create_test_dir {
+	# create test dir
+	test_dir="test/${problem_ns//::/\/}_test"
+	mkdir -p "${test_dir}"
+}
+
+function write_cmake_hlp_file {
+	local p_ns=${problem_ns%::*}
+	(
+	for ns in ${p_ns//::/ }
+	do
+		cd $ns
+		if [ ! -e CMakeLists.txt ]; then
+		cat << EOF_CMAKELISTS > CMakeLists.txt
+subdir_list(SUBDIRS \${CMAKE_CURRENT_LIST_DIR})
+foreach(subdir \${SUBDIRS})
+add_subdirectory(\${subdir})
+endforeach()
+EOF_CMAKELISTS
+		fi
+	done
+	)
+}
+
+function write_src_cmake_prj_file {
+	if [ -e CMakeLists.txt ]; then
+		return 1;
+	fi
+
+	cat << EOF_CMAKELISTS > CMakeLists.txt
+get_filename_component(ProjectId \${CMAKE_CURRENT_LIST_DIR} NAME)
+file(GLOB \${ProjectId}_SOURCES \${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB \${ProjectId}_HEADERS \${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+add_library(\${ProjectId} \${\${ProjectId}_SOURCES} \${\${ProjectId}_HEADERS})
+
+set_property(TARGET \${ProjectId} PROPERTY CXX_STANDARD 14)
+set_property(TARGET \${ProjectId} PROPERTY CXX_STANDARD_REQUIRED ON)
+
+file(RELATIVE_PATH ProjectFolder "\${PROJECT_SOURCE_DIR}" "\${CMAKE_CURRENT_LIST_DIR}")
+get_filename_component(ProjectFolder "\${ProjectFolder}" PATH)
+set_target_properties(\${ProjectId} PROPERTIES FOLDER "\${ProjectFolder}")
+EOF_CMAKELISTS
+}
+
+function write_src_header_file {
+	local header_file="${problem_name}.h"
+	if [ -e $header_file ]; then
+		return 1;
+	fi
+
+	local p_ns=${problem_ns%::*}
+	local ns_begin=
+	local ns_end=
+	for ns in ${p_ns//::/ }
+	do
+		ns_begin="$ns_begin\nnamespace $ns {"
+		ns_end="${ns_end}\n} // namespace $ns"
+	done
+
+	echo -ne "#ifndef ${problem_name^^}_H
+#define ${problem_name^^}_H 
+namespace hackerrank {
+namespace bmgandre {${ns_begin}
+
+class ${problem_name}
+{
+public:
+    static void run();
+};
+${ns_end}
+} // namespace bmgandre
+} // namespace hackerrank
+
+#endif // ${problem_name^^}_H
+" > $header_file
+}
+
+function write_src_source_file {
+	local source_file="${problem_name}.cpp"
+	if [ -e $source_file ]; then
+		return 1;
+	fi
+
+	echo -ne "#include \"${problem_name}.h\"
+#include <iostream>
+#include <string>
+
+using hackerrank::bmgandre::${problem_ns};
+
+void ${problem_name}::run()
+{
+}
+" > $source_file
+}
+
+function write_test_source_file {
+	local test_file="${problem_name}_test.cpp"
+	if [ -e $test_file ]; then
+		return 1;
+	fi
+
+	local p_ns=${problem_ns%::*}
+	local ns_begin=
+	local ns_end=
+	for ns in ${p_ns//::/ }
+	do
+		ns_begin="$ns_begin\nnamespace $ns {"
+		ns_end="${ns_end}\n} // namespace $ns"
+	done
+
+	echo -ne "#include <hackerrank_gtest.h>
+#include <${problem_name}.h>
+
+namespace hackerrank {
+namespace bmgandre {${ns_begin}
+
+using ${problem_name}_test = hackerrank::bmgandre::tests::hackerrank_gtest;
+
+TEST_F(${problem_name}_test, test_case_1) {
+	input_stream << \"TEST INPUT\";
+	${problem_name}::run();
+
+	std::string output = output_stream.str();
+	ASSERT_EQ(output, \"TEST OUTPUT\");
+}
+
+${ns_end}
+} // namespace bmgandre
+} // namespace hackerrank
+" > $test_file
+}
+
+function write_test_cmake_prj_file {
+	if [ -e CMakeLists.txt ]; then
+		return 1;
+	fi
+
+	cat << EOF_CMAKELISTS > CMakeLists.txt
+get_filename_component(ProjectTest \${CMAKE_CURRENT_LIST_DIR} NAME)
+file(GLOB \${ProjectTest}_SOURCES \${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB \${ProjectTest}_HEADERS \${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+set(TestBaseProject hackerrank_gtest)
+add_executable(\${ProjectTest} \${\${ProjectTest}_SOURCES} \${\${ProjectTest}_HEADERS})
+
+string(REPLACE "_test" "" ProjectId \${ProjectTest})
+#MESSAGE(STATUS "ProjectId:" \${ProjectId})
+
+get_filename_component(ProjectTestSrc \${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+#MESSAGE(STATUS "ProjectTestSrc:" \${ProjectTestSrc})
+
+set(ProjectSrc "\${ProjectTestSrc}/\${ProjectId}")
+string(REPLACE "test/" "src/" ProjectSrc \${ProjectSrc})
+set(TestBaseSrc "\${CMAKE_SOURCE_DIR}/src/\${TestBaseProject}")
+include_directories(\${ProjectSrc} \${TestBaseSrc})
+#MESSAGE(STATUS "ProjectSrc:" \${ProjectSrc})
+
+if (USE_CONAN_LIBS)
+	target_link_libraries(\${ProjectTest} \${ProjectId} \${TestBaseProject} \${CONAN_LIBS})
+else()
+#   GTest
+	find_package(GTest REQUIRED)
+	include_directories(\${GTEST_INCLUDE_DIRS})
+
+	target_link_libraries(\${ProjectTest} \${ProjectId} \${TestBaseProject} \${GTEST_LIBRARIES} \${GTEST_MAIN_LIBRARIES} pthread)
+endif (USE_CONAN_LIBS)
+
+set_property(TARGET \${ProjectTest} PROPERTY CXX_STANDARD 14)
+set_property(TARGET \${ProjectTest} PROPERTY CXX_STANDARD_REQUIRED ON)
+
+file(RELATIVE_PATH ProjectFolder "\${PROJECT_SOURCE_DIR}" "\${CMAKE_CURRENT_LIST_DIR}")
+get_filename_component(ProjectFolder "\${ProjectFolder}" PATH)
+set_target_properties(\${ProjectTest} PROPERTIES FOLDER "\${ProjectFolder}")
+
+add_test(\${ProjectTest} \${ProjectTest})
+EOF_CMAKELISTS
+}
+
+if [ ! -d "src" ] || [ ! -d "test" ] || [ ! -f CMakeLists.txt ]; then
+	echo "Error: You must run this script in root project directory"
+	usage_msg
+	exit 2
+fi
+
+if ! grep -iq "^project(" CMakeLists.txt; then
+	echo "Error: You must run this script in root project directory"
+	usage_msg
+	exit 2
+fi
+
+if [[ $# < 1 ]]; then
+	error_arg
+fi
+
+while [[ $# > 0 ]]
+do
+	key="$1"
+	case $key in
+		-n|--name)
+			set_name "$2"
+			[ ! -z "${problem_ns}" ] && shift
+		;;
+		-h|--help)
+			usage_msg
+			exit 0
+		;;
+		*)
+			error_arg
+		;;
+	esac
+	shift # past argument or value
+done
+
+if [ -z "${problem_ns}"  ]; then
+	echo "Error: name is required but missing"
+	usage_msg
+	exit 2
+fi
+
+ns_trim="$(echo -e "${problem_ns}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/[[:space:]]\+//')"
+ns_trim="${ns_trim,,}"
+if [ "${problem_ns}" != "${ns_trim}" ]; then
+	echo "Warn: name will be fixed to: ${ns_trim}"
+fi
+
+# lowercase problem namespace without space 
+problem_ns="${ns_trim}"
+# problem name from namespace
+problem_name=${problem_ns##*::}
+
+create_source_dir
+create_test_dir
+
+(cd "${src_dir}"
+  write_src_cmake_prj_file
+  write_src_header_file
+  write_src_source_file
+) #${src_dir}
+
+(cd "src"
+  write_cmake_hlp_file
+)
+
+(cd "${test_dir}"
+  write_test_cmake_prj_file
+  write_test_source_file
+)
+
+(cd "test"
+  write_cmake_hlp_file
+)
