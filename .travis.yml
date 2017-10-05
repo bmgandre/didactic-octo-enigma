@@ -1,5 +1,5 @@
 language: c++
-sudo: false
+sudo: true
 matrix:
   include:
     - os: linux
@@ -22,7 +22,7 @@ matrix:
             - g++-4.9
 
 before_script:
-  - pip install conan
+  - sudo pip install conan
 
 script:
   - mkdir build
