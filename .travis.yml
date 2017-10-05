@@ -4,7 +4,7 @@ matrix:
   include:
     - os: linux
       compiler: clang
-      env: CONAN_ARGS='-s arch=x86_64 -s build_type=Release -s compiler=clang -s compiler.libcxx=libstdc++ -s compiler.version=3.4 --buil'
+      env: CONAN_ARGS='-s arch=x86_64 -s build_type=Release -s compiler=clang -s compiler.libcxx=libstdc++ -s compiler.version=3.4 --build'
       addons:
         apt:
           sources:
@@ -13,7 +13,7 @@ matrix:
             - clang-3.4
     - os: linux
       compiler: gcc
-      env: CONAN_ARGS='-s arch=x86_64 -s build_type=Release -s compiler=g++ -s compiler.libcxx=libstdc++ -s compiler.version=3.4 --buil'
+      env: CONAN_ARGS='-s arch=x86_64 -s build_type=Release -s compiler=gcc -s compiler.libcxx=libstdc++ -s compiler.version=3.4 --build'
       addons:
         apt:
           sources:
