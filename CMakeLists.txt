@@ -10,12 +10,13 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/checkcompiler.cmake)
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/subdirlist.cmake)
+include(${CMAKE_SOURCE_DIR}/scripts/cmake/conansetup.cmake)
 
 check_compiler()
 
 if (USE_CONAN_LIBS)
     include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-    conan_basic_setup()
+    conan_custom_setup()
 endif (USE_CONAN_LIBS)
 
 include(CTest)
