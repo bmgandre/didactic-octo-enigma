@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bmgandre/hackerrank-cpp.svg?branch=master)](https://travis-ci.org/bmgandre/hackerrank-cpp)
+
 # Hackerrank solutions in C++
 
 This repository contains some Hackerrank solutions in C++.
