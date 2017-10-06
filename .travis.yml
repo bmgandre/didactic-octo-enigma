@@ -8,6 +8,7 @@ matrix:
         - CONAN_ARGS='-s arch=x86_64 -s build_type=Release -s compiler=clang -s compiler.libcxx=libstdc++ -s compiler.version=3.5 --build'
         - CXX=clang++-3.5
         - CC=clang-3.5
+        - CMAKE_CXX_FLAGS='-Wall -pedantic -pthread -g -O0 -fprofile-arcs -ftest-coverage'
       addons:
         apt:
           sources:
@@ -23,6 +24,7 @@ matrix:
         - CONAN_ARGS='-s arch=x86_64 -s build_type=Release -s compiler=gcc -s compiler.libcxx=libstdc++ -s compiler.version=4.9 --build'
         - CXX=g++-4.9
         - CC=gcc-4.9
+        - CMAKE_CXX_FLAGS='-Wall -pedantic -pthread -g -O0 -fprofile-arcs -ftest-coverage'
       addons:
         apt:
           sources:
