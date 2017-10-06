@@ -26,7 +26,7 @@ before_script:
   
 install:
 - "[ $CXX = g++ ] && export CXX=g++-4.9 || true"
-- "[ $CXX = clang++ ] && export CXX=clang++-3.4 || true"
+- "[ $CXX = clang++ ] && export CXX=clang-3.4 || true"
 
 script:
   - mkdir build
