@@ -16,7 +16,7 @@ configuration:
   - Debug
 
 build:
-  verbosity: minimal
+  verbosity: detailed
 
 install:
 - ps: |
@@ -33,16 +33,19 @@ build_script:
     md _build -Force | Out-Null
     cd _build
 
+    Write-Output "conan install -f ../conanfile.txt $env:conan_args"
     & conan install -f ../conanfile.txt $env:conan_args
     if ($LastExitCode -ne 0) {
         throw "Exec: $ErrorMessage"
     }
     
+    Write-Output "cmake -G $env:generator -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true .."
     & cmake -G "$env:generator" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
     if ($LastExitCode -ne 0) {
         throw "Exec: $ErrorMessage"
     }
     
+    Write-Output "make"
     & make
     if ($LastExitCode -ne 0) {
         throw "Exec: $ErrorMessage"
