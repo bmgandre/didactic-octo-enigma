@@ -6,11 +6,11 @@ environment:
   matrix:
     - compiler: msvc-14-seh
       generator: "Visual Studio 14 2015"
-      conan_args="-s arch=x86 -s build_type=Release -s compiler='Visual Studio' -s compiler.version=14 --build"
+      conan_args: "-s arch=x86 -s build_type=Release -s compiler='Visual Studio' -s compiler.version=14 --build"
 
     - compiler: msvc-14-seh
       generator: "Visual Studio 14 2015 Win64"
-      conan_args="-s arch=x86_64 -s build_type=Release -s compiler='Visual Studio' -s compiler.version=14 --build"
+      conan_args: "-s arch=x86_64 -s build_type=Release -s compiler='Visual Studio' -s compiler.version=14 --build"
 
 configuration:
   - Debug
@@ -34,7 +34,7 @@ build_script:
     cd build
 
     & conan install -f ../conanfile.txt $en:conan_args
-    $conf = "-DCMAKE_CONFIGURATION_TYPES=Debug;Release -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true"
+    $ conf = "-DCMAKE_CONFIGURATION_TYPES=Debug;Release -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true"
     & cmake -G "$env:generator" $conf ..
     if ($LastExitCode -ne 0) {
         throw "Exec: $ErrorMessage"
