@@ -33,9 +33,8 @@ build_script:
     md build -Force | Out-Null
     cd build
 
-    & conan install -f ../conanfile.txt $en:conan_args
-    $conf = "-DCMAKE_CONFIGURATION_TYPES=Debug;Release -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true"
-    & cmake -G "$env:generator" $conf ..
+    & conan install -f ../conanfile.txt $env:conan_args
+    & cmake -G "$env:generator" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
     if ($LastExitCode -ne 0) {
         throw "Exec: $ErrorMessage"
     }
