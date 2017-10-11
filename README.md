@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bmgandre/hackerrank-cpp.svg?branch=master)](https://travis-ci.org/bmgandre/hackerrank-cpp)
+[![Build status](https://ci.appveyor.com/api/projects/status/isbj2pjxg5aav8tj/branch/master?svg=true)](https://ci.appveyor.com/project/bmgandre/hackerrank-cpp/branch/master)
 [![codecov](https://codecov.io/gh/bmgandre/hackerrank-cpp/branch/master/graph/badge.svg)](https://codecov.io/gh/bmgandre/hackerrank-cpp)
 
 # Hackerrank solutions in C++
