@@ -24,7 +24,7 @@ void between_two_sets::run()
   }
   
   std::vector<int> list_b;
-  auto min_b = __INT_MAX__;
+  auto min_b = std::numeric_limits<int>::max();
   for (auto i = 0; i < m; i++) {
 	auto value = 0;
 	std::cin >> value;

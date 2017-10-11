@@ -14,7 +14,7 @@ void breaking_the_records::run()
     auto worst_score_dec = 0;
 
     auto best_score = 0;
-    auto worst_score = __INT_MAX__;
+    auto worst_score = std::numeric_limits<int>::max();
 
     for (auto i = 0; i < n; i++) {
         auto current_value = 0;
