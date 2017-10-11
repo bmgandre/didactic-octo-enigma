@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <queue>
+#include <functional>
 
 using hackerrank::bmgandre::algorithms::warmup::mini_max_sum;
 
