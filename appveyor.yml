@@ -6,11 +6,11 @@ environment:
   matrix:
     - compiler: msvc-14-seh
       generator: "Visual Studio 14 2015"
-      conan_args: "-s arch=x86 -s build_type=Release -s compiler='Visual Studio' -s compiler.version=14 --build"
+      conan_args: "-s arch=x86 -s build_type=Release -s compiler=\"Visual Studio\" -s compiler.version=14 --build"
 
     - compiler: msvc-14-seh
       generator: "Visual Studio 14 2015 Win64"
-      conan_args: "-s arch=x86_64 -s build_type=Release -s compiler='Visual Studio' -s compiler.version=14 --build"
+      conan_args: "-s arch=x86_64 -s build_type=Release -s compiler=\"Visual Studio\" -s compiler.version=14 --build"
 
 configuration:
   - Debug
@@ -19,41 +19,22 @@ build:
   verbosity: detailed
 
 install:
-- ps: |
-    Write-Output "Compiler: $env:compiler"
-    Write-Output "Generator: $env:generator"
-- cmd: echo "Downloading conan..."
+- cmd: echo Downloading conan...
 - cmd: set PATH=%PATH%;%PYTHON%/Scripts/
 - cmd: pip.exe install conan
 - cmd: conan user # Create the conan data directory
 - cmd: conan --version
 
 build_script:
-- ps: |
-    md _build -Force | Out-Null
-    cd _build
-
-    Write-Output "conan install -f ../conanfile.txt $env:conan_args"
-    & conan install -f ../conanfile.txt $env:conan_args
-    if ($LastExitCode -ne 0) {
-        throw "Exec: $ErrorMessage"
-    }
-    
-    Write-Output "cmake -G $env:generator -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true .."
-    & cmake -G "$env:generator" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
-    if ($LastExitCode -ne 0) {
-        throw "Exec: $ErrorMessage"
-    }
-    
-    Write-Output "make"
-    & make
-    if ($LastExitCode -ne 0) {
-        throw "Exec: $ErrorMessage"
-    }
+- cmd: mkdir build
+- cmd: cd build
+- cmd: echo conan install -f ../conanfile.txt %conan_args%
+- cmd: conan install -f ../conanfile.txt %conan_args%
+- cmd: echo cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
+- cmd: cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
+- cmd: echo msbuild hackerrank.sln
+- cmd: msbuild hackerrank.sln
 
 test_script:
-- ps: |
-    & make test
-    if ($LastExitCode -ne 0) {
-        throw "Exec: $ErrorMessage"
-    }
+- cmd: set PATH=%PATH%;%CD%\bin
+- cmd: ctest
