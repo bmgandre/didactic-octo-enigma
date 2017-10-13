@@ -37,4 +37,4 @@ build_script:
 
 test_script:
 - cmd: set PATH=%PATH%;%CD%\bin
-- cmd: ctest
+- cmd: ctest -j -V
