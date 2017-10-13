@@ -1,4 +1,4 @@
-subdir_list(SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR})
+list_folders(SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR})
 foreach(subdir ${SUBDIRS})
-add_subdirectory(${subdir})
+    add_subdirectory(${subdir})
 endforeach()
