@@ -32,8 +32,8 @@ build_script:
 - cmd: conan install -f ../conanfile.txt %conan_args%
 - cmd: echo cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
 - cmd: cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
-- cmd: echo msbuild hackerrank.sln
-- cmd: msbuild hackerrank.sln
+- cmd: echo msbuild /m hackerrank.sln
+- cmd: msbuild /m hackerrank.sln
 
 test_script:
 - cmd: set PATH=%PATH%;%CD%\bin
