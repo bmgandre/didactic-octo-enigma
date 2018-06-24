@@ -35,4 +35,7 @@ macro(hackerrank_setup_test_project)
     set_target_properties(${ProjectTest} PROPERTIES FOLDER "${ProjectFolder}")
 
     add_test(${ProjectTest} ${ProjectTest})
+
+    file(GLOB GTEST_BINARIES "${PROJECT_BINARY_DIR}/bin/gtest*")
+    file(COPY ${GTEST_BINARIES} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 endmacro()
