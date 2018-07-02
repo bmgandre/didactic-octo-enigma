@@ -30,8 +30,8 @@ build_script:
   - cmd: |
          mkdir build
          cd build
-         echo conan install -f ../conanfile.txt %conan_args%
-         conan install -f ../conanfile.txt %conan_args%
+         echo conan install ../conanfile.txt %conan_args%
+         conan install ../conanfile.txt %conan_args%
          echo cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
          cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
          echo msbuild /m hackerrank.sln
