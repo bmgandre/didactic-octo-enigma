@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(migratory_birds.cpp migratory_birds.h)
+hackerrank_challenge_test(migratory_birds_test.cpp)

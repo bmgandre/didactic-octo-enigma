@@ -1,1 +1,0 @@
-hackerrank_setup_test_project()

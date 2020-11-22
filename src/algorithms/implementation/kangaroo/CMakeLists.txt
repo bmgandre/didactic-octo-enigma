@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(kangaroo.cpp kangaroo.h)
+hackerrank_challenge_test(kangaroo_test.cpp)

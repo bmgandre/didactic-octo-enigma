@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(apple_and_orange.cpp apple_and_orange.h)
+hackerrank_challenge_test(apple_and_orange_test.cpp)

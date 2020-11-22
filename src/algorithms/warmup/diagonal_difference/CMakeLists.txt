@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(diagonal_difference.cpp diagonal_difference.h)
+hackerrank_challenge_test(diagonal_difference_test.cpp)

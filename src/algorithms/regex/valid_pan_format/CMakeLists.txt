@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(valid_pan_format.cpp valid_pan_format.h)
+hackerrank_challenge_test(valid_pan_format_test.cpp)

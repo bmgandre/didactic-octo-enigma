@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(angry_professor.cpp angry_professor.h)
+hackerrank_challenge_test(angry_professor_test.cpp)

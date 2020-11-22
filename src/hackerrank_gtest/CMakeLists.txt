@@ -1,4 +1,4 @@
-hackerrank_setup_project()
+hackerrank_setup_project(hackerrank_gtest.cpp hackerrank_gtest.h)
 
 if (USE_CONAN_LIBS)
     target_link_libraries(${ProjectId} ${CONAN_LIBS})

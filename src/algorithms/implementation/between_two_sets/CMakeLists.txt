@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(between_two_sets.cpp between_two_sets.h)
+hackerrank_challenge_test(between_two_sets_test.cpp)

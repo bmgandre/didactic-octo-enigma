@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(linkedlists.cpp linkedlists.h)
+hackerrank_challenge_test(linkedlists_test.cpp)

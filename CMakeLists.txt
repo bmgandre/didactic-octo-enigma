@@ -12,8 +12,8 @@ include(${CMAKE_SOURCE_DIR}/scripts/cmake/compiler_check.cmake)
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/list_folders.cmake)
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/project_add_all_folders.cmake)
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/conan_custom_setup.cmake)
-include(${CMAKE_SOURCE_DIR}/scripts/cmake/hackerrank_setup_project.cmake)
-include(${CMAKE_SOURCE_DIR}/scripts/cmake/hackerrank_setup_test_project.cmake)
+include(${CMAKE_SOURCE_DIR}/scripts/cmake/hackerrank_challenge.cmake)
+
 
 compiler_check()
 
@@ -25,4 +25,3 @@ endif (USE_CONAN_LIBS)
 include(CTest)
 
 add_subdirectory(src)
-add_subdirectory(test)
