@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(bon_appetit.cpp bon_appetit.h)
+hackerrank_challenge_test(bon_appetit_test.cpp)

@@ -24,12 +24,6 @@ function create_source_dir {
 	mkdir -p "${src_dir}"
 }
 
-function create_test_dir {
-	# create test dir
-	test_dir="test/${problem_ns//::/\/}_test"
-	mkdir -p "${test_dir}"
-}
-
 function write_cmake_hlp_file {
 	local p_ns=${problem_ns%::*}
 	(
@@ -45,17 +39,18 @@ EOF_CMAKELISTS
 	)
 }
 
-function write_src_cmake_prj_file {
+function write_cmake_prj_file {
 	if [ -e CMakeLists.txt ]; then
 		return 1;
 	fi
 
 	cat << EOF_CMAKELISTS > CMakeLists.txt
-hackerrank_setup_project()
+hackerrank_challenge_solution(${problem_name}.cpp ${problem_name}.h)
+hackerrank_challenge_test(${problem_name}_test.cpp)
 EOF_CMAKELISTS
 }
 
-function write_src_header_file {
+function write_header_file {
 	local header_file="${problem_name}.h"
 	if [ -e $header_file ]; then
 		return 1;
@@ -72,13 +67,14 @@ function write_src_header_file {
 
 	echo -ne "#ifndef ${problem_name^^}_H
 #define ${problem_name^^}_H 
+
 namespace hackerrank {
 namespace bmgandre {${ns_begin}
 
 class ${problem_name}
 {
 public:
-    static void run();
+    static void solve();
 };
 ${ns_end}
 } // namespace bmgandre
@@ -88,7 +84,7 @@ ${ns_end}
 " > $header_file
 }
 
-function write_src_source_file {
+function write_source_file {
 	local source_file="${problem_name}.cpp"
 	if [ -e $source_file ]; then
 		return 1;
@@ -100,23 +96,13 @@ function write_src_source_file {
 
 using hackerrank::bmgandre::${problem_ns};
 
-void ${problem_name}::run()
+void ${problem_name}::solve()
 {
 }
 " > $source_file
 }
 
-function write_test_cmake_prj_file {
-	if [ -e CMakeLists.txt ]; then
-		return 1;
-	fi
-
-	cat << EOF_CMAKELISTS > CMakeLists.txt
-hackerrank_setup_test_project()
-EOF_CMAKELISTS
-}
-
-function write_test_source_file {
+function write_test_file {
 	local test_file="${problem_name}_test.cpp"
 	if [ -e $test_file ]; then
 		return 1;
@@ -132,7 +118,7 @@ function write_test_source_file {
 	done
 
 	echo -ne "#include <hackerrank_gtest.h>
-#include <${problem_name}.h>
+#include \"${problem_name}.h\"
 
 namespace hackerrank {
 namespace bmgandre {${ns_begin}
@@ -141,7 +127,7 @@ using ${problem_name}_test = hackerrank::bmgandre::tests::hackerrank_gtest;
 
 TEST_F(${problem_name}_test, test_case_1) {
 	input_stream << \"TEST INPUT\";
-	${problem_name}::run();
+	${problem_name}::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, \"TEST OUTPUT\");
@@ -153,7 +139,7 @@ ${ns_end}
 " > $test_file
 }
 
-if [ ! -d "src" ] || [ ! -d "test" ] || [ ! -f CMakeLists.txt ]; then
+if [ ! -d "src" ] || [ ! -f CMakeLists.txt ]; then
 	echo "Error: You must run this script in root project directory"
 	usage_msg
 	exit 2
@@ -206,23 +192,15 @@ problem_ns="${ns_trim}"
 problem_name=${problem_ns##*::}
 
 create_source_dir
-create_test_dir
 
 (cd "${src_dir}"
-  write_src_cmake_prj_file
-  write_src_header_file
-  write_src_source_file
-) #${src_dir}
+  write_cmake_prj_file
+  write_header_file
+  write_source_file
+  write_test_file
+) 
 
 (cd "src"
   write_cmake_hlp_file
 )
 
-(cd "${test_dir}"
-  write_test_cmake_prj_file
-  write_test_source_file
-)
-
-(cd "test"
-  write_cmake_hlp_file
-)

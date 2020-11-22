@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(a_very_big_sum.cpp a_very_big_sum.h)
+hackerrank_challenge_test(a_very_big_sum_test.cpp)

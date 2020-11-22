@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(time_conversion.cpp time_conversion.h)
+hackerrank_challenge_test(time_conversion_test.cpp)

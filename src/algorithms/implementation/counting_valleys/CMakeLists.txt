@@ -1,0 +1,2 @@
+hackerrank_challenge_solution(counting_valleys.cpp counting_valleys.h)
+hackerrank_challenge_test(counting_valleys_test.cpp)

@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(grading_students.cpp grading_students.h)
+hackerrank_challenge_test(grading_students_test.cpp)

@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(simple_array_sum.cpp simple_array_sum.h)
+hackerrank_challenge_test(simple_array_sum_test.cpp)
