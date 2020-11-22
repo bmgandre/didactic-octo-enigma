@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(birthday_cake_candles.cpp birthday_cake_candles.h)
+hackerrank_challenge_test(birthday_cake_candles_test.cpp)

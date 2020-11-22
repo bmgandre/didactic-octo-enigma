@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(compare_the_triplets.cpp compare_the_triplets.h)
+hackerrank_challenge_test(compare_the_triplets_test.cpp)

@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(circular_array_rotation.cpp circular_array_rotation.h)
+hackerrank_challenge_test(circular_array_rotation_test.cpp)

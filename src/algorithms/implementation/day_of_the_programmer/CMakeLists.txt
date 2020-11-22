@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(day_of_the_programmer.cpp day_of_the_programmer.h)
+hackerrank_challenge_test(day_of_the_programmer_test.cpp)

@@ -1,1 +1,2 @@
-hackerrank_setup_project()
+hackerrank_challenge_solution(cut_the_sticks.cpp cut_the_sticks.h)
+hackerrank_challenge_test(cut_the_sticks_test.cpp)
