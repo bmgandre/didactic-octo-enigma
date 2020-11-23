@@ -47,22 +47,14 @@ This will create the following directory structure:
 ```
 hackerrank-cpp
 |-- src
-|   |-- CMakeLists.txt
+|   |
 |   +-- algorithms
-|       |-- CMakeLists.txt
+|       |
 |       +-- implementation
-|           |-- CMakeLists.txt
+|           |
 |           +-- diagonal_difference
 |               |-- diagonal_difference.cpp
 |               |-- diagonal_difference.h
+|               |-- diagonal_difference_test.cpp
 |               +-- CMakeLists.txt
-+-- test
-    |-- CMakeLists.txt
-    +-- algorithms
-        |-- CMakeLists.txt
-        +-- implementation
-            |-- CMakeLists.txt
-            +-- diagonal_difference
-                |-- diagonal_difference_test.cpp
-                +-- CMakeLists.txt
 ```
