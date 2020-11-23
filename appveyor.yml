@@ -1,22 +1,42 @@
 version: '{build}'
 
-os: Visual Studio 2015
+os: Visual Studio 2019
 
 environment:
   matrix:
-    - compiler: msvc-14-seh
-      generator: "Visual Studio 14 2015"
-      conan_args: "-s arch=x86 -s build_type=Release -s compiler=\"Visual Studio\" -s compiler.version=14 --build"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      compiler: msvc-15-seh
+      generator: "Visual Studio 15 2017 Win64"
+      platform: "x64"
+      configuration: "Debug"
+      build_system: cmake
+      conan_args: "-s arch=x86_64 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=15 --build"
 
-    - compiler: msvc-14-seh
-      generator: "Visual Studio 14 2015 Win64"
-      conan_args: "-s arch=x86_64 -s build_type=Release -s compiler=\"Visual Studio\" -s compiler.version=14 --build"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      compiler: msvc-15-seh
+      generator: "Visual Studio 15 2017"
+      platform: "Win32"
+      configuration: "Debug"
+      build_system: cmake
+      conan_args: "-s arch=x86 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=15 --build"
 
-configuration:
-  - Debug
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      compiler: msvc-16-seh
+      generator: "Visual Studio 16 2019"
+      platform: "x64"
+      configuration: "Debug"
+      arch: "-A x64"
+      build_system: cmake
+      conan_args: "-s arch=x86_64 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=16 --build"
 
-build:
-  verbosity: detailed
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      compiler: msvc-16-seh
+      generator: "Visual Studio 16 2019"
+      platform: "Win32"
+      configuration: "Debug"
+      arch: "-A Win32"
+      build_system: cmake
+      conan_args: "-s arch=x86 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=16 --build"
 
 install:
   - cmd: |
@@ -32,10 +52,10 @@ build_script:
          cd build
          echo conan install ../conanfile.txt %conan_args%
          conan install ../conanfile.txt %conan_args%
-         echo cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
-         cmake -G "%generator%" -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
-         echo msbuild /m hackerrank.sln
-         msbuild /m hackerrank.sln
+         echo cmake -G "%generator%" %arch% -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
+         cmake -G "%generator%" %arch% -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
+         echo msbuild /m hackerrank.sln /p:Configuration=%configuration% /p:Platform=%platform%
+         msbuild /m hackerrank.sln /p:Configuration=%configuration% /p:Platform=%platform%
 
 test_script:
   - cmd: |
