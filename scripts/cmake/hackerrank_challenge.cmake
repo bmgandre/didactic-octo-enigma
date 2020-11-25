@@ -9,7 +9,16 @@ macro(hackerrank_setup_project)
 
 	file(RELATIVE_PATH ProjectFolder "${PROJECT_SOURCE_DIR}" "${CMAKE_CURRENT_LIST_DIR}")
 	get_filename_component(ProjectFolder "${ProjectFolder}" PATH)
+	
 	set_target_properties(${ProjectId} PROPERTIES FOLDER "${ProjectFolder}")
+	
+	if (USE_CONAN_LIBS)
+		target_link_libraries(${ProjectId} ${CONAN_LIBS})	
+	else()
+        find_package(Boost 1.68.0)
+        include_directories(${Boost_INCLUDE_DIRS})
+        target_link_libraries(${ProjectId} ${Boost_LIBRARIES})
+    endif (USE_CONAN_LIBS)
 endmacro()
 
 macro(hackerrank_challenge_solution)
