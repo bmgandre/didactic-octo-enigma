@@ -1,0 +1,2 @@
+hackerrank_challenge_solution(caesar_cipher.cpp caesar_cipher.h)
+hackerrank_challenge_test(caesar_cipher_test.cpp)
