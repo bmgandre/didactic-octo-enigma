@@ -13,10 +13,10 @@ macro(hackerrank_setup_project)
 	set_target_properties(${ProjectId} PROPERTIES FOLDER "${ProjectFolder}")
 	
 	if (USE_CONAN_LIBS)
-		target_link_libraries(${ProjectId} ${CONAN_LIBS} m)
+		target_link_libraries(${ProjectId} ${CONAN_LIBS})
 	else()
 		include_directories(${Boost_INCLUDE_DIRS} ${JsonCpp_INCLUDE_DIRS})
-		target_link_libraries(${ProjectId} ${Boost_LIBRARIES} ${JsonCpp_LIBRARIES} m)
+		target_link_libraries(${ProjectId} ${Boost_LIBRARIES} ${JsonCpp_LIBRARIES})
 	endif (USE_CONAN_LIBS)
 endmacro()
 
