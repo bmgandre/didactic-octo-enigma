@@ -1,6 +1,7 @@
 [requires]
 gtest/1.10.0
 boost/1.69.0
+jsoncpp/1.9.4
 
 [generators]
 cmake
