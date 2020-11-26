@@ -14,12 +14,15 @@ include(${CMAKE_SOURCE_DIR}/scripts/cmake/project_add_all_folders.cmake)
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/conan_custom_setup.cmake)
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/hackerrank_challenge.cmake)
 
-
 compiler_check()
 
 if (USE_CONAN_LIBS)
-    include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-    conan_custom_setup()
+	include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+	conan_custom_setup()
+else()
+	find_package(PkgConfig REQUIRED)
+	pkg_check_modules(JsonCpp REQUIRED jsoncpp>=1.9.4)
+	find_package(Boost 1.68.0)
 endif (USE_CONAN_LIBS)
 
 include(CTest)
