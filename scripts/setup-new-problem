@@ -136,6 +136,11 @@ TEST_F(${problem_name}_test, test_case_1) {
 ${ns_end}
 } // namespace bmgandre
 } // namespace hackerrank
+
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
 " > $test_file
 }
 
