@@ -10,8 +10,8 @@ using birthday_chocolate_test = hackerrank::bmgandre::tests::hackerrank_gtest;
 
 TEST_F(birthday_chocolate_test, test_case_1) {
 	input_stream << "5" << std::endl
-	             << "1 2 1 3 2" << std::endl
-	             << "3 2" << std::endl;
+				 << "1 2 1 3 2" << std::endl
+				 << "3 2" << std::endl;
 				 
 	birthday_chocolate::run();
 
@@ -22,9 +22,9 @@ TEST_F(birthday_chocolate_test, test_case_1) {
 
 TEST_F(birthday_chocolate_test, test_case_2) {
 	input_stream << "6" << std::endl
-	             << "1 1 1 1 1 1" << std::endl
-	             << "3 2" << std::endl;
-				 
+				 << "1 1 1 1 1 1" << std::endl
+				 << "3 2" << std::endl;
+
 	birthday_chocolate::run();
 
 	std::string output = output_stream.str();
@@ -34,9 +34,9 @@ TEST_F(birthday_chocolate_test, test_case_2) {
 
 TEST_F(birthday_chocolate_test, test_case_3) {
 	input_stream << "1" << std::endl
-	             << "4" << std::endl
-	             << "4 1" << std::endl;
-				 
+				 << "4" << std::endl
+				 << "4 1" << std::endl;
+
 	birthday_chocolate::run();
 
 	std::string output = output_stream.str();
@@ -48,3 +48,8 @@ TEST_F(birthday_chocolate_test, test_case_3) {
 } // namespace implementation
 } // namespace bmgandre
 } // namespace hackerrank
+
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

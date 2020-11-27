@@ -22,3 +22,8 @@ TEST_F(counting_valleys_test, test_case_2) {
 } // namespace implementation
 } // namespace bmgandre
 } // namespace hackerrank
+
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

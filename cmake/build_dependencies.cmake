@@ -1,0 +1,27 @@
+macro(check_build_dependencies)
+    set(USE_CONAN_LIBS false)
+
+    if(USE_CONAN_BOOST)
+        set(USE_CONAN_LIBS true)
+    else()
+        find_package(Boost 1.68.0 REQUIRED)
+    endif()
+
+    if(USE_CONAN_JSONCPP)
+        set(USE_CONAN_LIBS true)
+    else()
+        find_package(PkgConfig REQUIRED)
+        pkg_check_modules(JsonCpp REQUIRED jsoncpp>=1.9.4)
+    endif()
+
+    if(USE_CONAN_GTEST)
+        set(USE_CONAN_LIBS true)
+    else()
+        find_package(GTest 1.7 REQUIRED)
+    endif()
+
+    if (USE_CONAN_LIBS)
+        include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+        conan_custom_setup()
+    endif()
+endmacro()

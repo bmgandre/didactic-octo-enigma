@@ -13,6 +13,7 @@ matrix:
         - CMAKE_EXE_LINKER_FLAGS="--coverage"
       addons:
         apt:
+          update: true
           sources:
             - sourceline: 'ppa:ubuntu-toolchain-r/test'
             - sourceline: 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
@@ -22,6 +23,7 @@ matrix:
             - clang-11
             - cmake
             - lcov
+            - libboost1.71-all-dev
     - os: linux
       compiler: gcc
       env:
@@ -32,12 +34,14 @@ matrix:
         - CMAKE_EXE_LINKER_FLAGS="-coverage -lgcov"
       addons:
         apt:
+          update: true
           sources:
             - sourceline: 'ppa:ubuntu-toolchain-r/test'
           packages:
             - g++-10
             - cmake
             - lcov
+            - libboost1.71-all-dev
 
 install:
   - "[ $CXX = g++ ] && export CXX=g++-10 || true"
@@ -50,8 +54,8 @@ script:
   - |
     mkdir build
     cd build
-    conan install ../conanfile.txt ${CONAN_ARGS}
-    cmake -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${CMAKE_EXE_LINKER_FLAGS}" ..
+    conan install ../.conan/conanfile_noboost.txt ${CONAN_ARGS}
+    cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${CMAKE_EXE_LINKER_FLAGS}" -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON ..
     make -j
     make test ARGS="-j -V"
 

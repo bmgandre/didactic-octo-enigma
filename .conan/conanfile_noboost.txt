@@ -1,0 +1,13 @@
+[requires]
+gtest/1.10.0
+jsoncpp/1.9.4
+
+[generators]
+cmake
+
+[options]
+gtest:shared=True
+
+[imports]
+bin, *.dll -> ./bin
+lib, *.dylib* -> ./bin

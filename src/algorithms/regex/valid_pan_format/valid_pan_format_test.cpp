@@ -24,6 +24,7 @@ TEST_F(valid_pan_format_test, test_case_1) {
 } // namespace bmgandre
 } // namespace hackerrank
 
-
-
-
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

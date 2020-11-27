@@ -11,6 +11,8 @@ environment:
       configuration: "Debug"
       build_system: cmake
       conan_args: "-s arch=x86_64 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=15 --build"
+      boost_root: C:/Libraries/boost_1_69_0
+      boost_lib: C:/Libraries/boost_1_69_0/lib64-msvc-14.0
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       compiler: msvc-15-seh
@@ -19,6 +21,8 @@ environment:
       configuration: "Debug"
       build_system: cmake
       conan_args: "-s arch=x86 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=15 --build"
+      boost_root: C:/Libraries/boost_1_69_0
+      boost_lib: C:/Libraries/boost_1_69_0/lib32-msvc-14.0
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       compiler: msvc-16-seh
@@ -28,6 +32,8 @@ environment:
       arch: "-A x64"
       build_system: cmake
       conan_args: "-s arch=x86_64 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=16 --build"
+      boost_root: C:/Libraries/boost_1_71_0
+      boost_lib: C:/Libraries/boost_1_71_0/lib64-msvc-14.0
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       compiler: msvc-16-seh
@@ -37,6 +43,8 @@ environment:
       arch: "-A Win32"
       build_system: cmake
       conan_args: "-s arch=x86 -s build_type=Debug -s compiler=\"Visual Studio\" -s compiler.version=16 --build"
+      boost_root: C:/Libraries/boost_1_71_0
+      boost_lib: C:/Libraries/boost_1_71_0/lib32-msvc-14.0
 
 install:
   - cmd: |
@@ -50,10 +58,10 @@ build_script:
   - cmd: |
          mkdir build
          cd build
-         echo conan install ../conanfile.txt %conan_args%
-         conan install ../conanfile.txt %conan_args%
-         echo cmake -G "%generator%" %arch% -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
-         cmake -G "%generator%" %arch% -DUSE_CONAN_LIBS=true -DCMAKE_VERBOSE_MAKEFILE=true ..
+         echo conan install ../.conan/conanfile_noboost.txt %conan_args%
+         conan install ../.conan/conanfile_noboost.txt %conan_args%
+         echo cmake -G "%generator%" %arch% -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON -DBOOST_ROOT="%boost_root%" -DBOOST_LIBRARYDIR="%boost_lib%" -DBoost_USE_STATIC_LIBS=ON ..
+         cmake -G "%generator%" %arch% -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON -DBOOST_ROOT="%boost_root%" -DBOOST_LIBRARYDIR="%boost_lib%" -DBoost_USE_STATIC_LIBS=ON ..
          echo msbuild /m hackerrank.sln /p:Configuration=%configuration% /p:Platform=%platform%
          msbuild /m hackerrank.sln /p:Configuration=%configuration% /p:Platform=%platform%
 

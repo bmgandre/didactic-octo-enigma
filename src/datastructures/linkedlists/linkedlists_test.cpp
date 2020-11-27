@@ -62,3 +62,8 @@ TEST_F(linkedlists_test, test_case_print) {
 } // namespace datastructures
 } // namespace bmgandre
 } // namespace hackerrank
+
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

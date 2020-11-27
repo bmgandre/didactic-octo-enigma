@@ -9,7 +9,7 @@ namespace implementation {
 using apple_and_orange_test = hackerrank::bmgandre::tests::hackerrank_gtest;
 
 TEST_F(apple_and_orange_test, test_case_1) {
-    input_stream << R"raw(7  11
+	input_stream << R"raw(7  11
                           5  15
                           3   2
                          -2   2 1
@@ -19,13 +19,17 @@ TEST_F(apple_and_orange_test, test_case_1) {
 	apple_and_orange::run();
 
 	std::string output = output_stream.str();
-    auto expected_output = "1\n1\n";
+	auto expected_output = "1\n1\n";
 
-    ASSERT_EQ(output, expected_output);
+	ASSERT_EQ(output, expected_output);
 }
-
 
 } // namespace algorithms
 } // namespace implementation
 } // namespace bmgandre
 } // namespace hackerrank
+
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
