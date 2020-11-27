@@ -55,7 +55,7 @@ script:
     mkdir build
     cd build
     conan install ../.conan/conanfile_noboost.txt ${CONAN_ARGS}
-    cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${CMAKE_EXE_LINKER_FLAGS}" ..
+    cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${CMAKE_EXE_LINKER_FLAGS}" -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON ..
     make -j
     make test ARGS="-j -V"
 
