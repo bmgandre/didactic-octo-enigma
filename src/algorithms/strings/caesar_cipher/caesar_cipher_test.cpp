@@ -16,9 +16,9 @@ TEST_F(caesar_cipher_test, test_case_alphabet) {
 }
 
 TEST_F(caesar_cipher_test, test_case_symbols) {
-    using namespace std::string_literals;
-    auto input = "1234567890-_=+'`'[]{}~^/;?.><,\\|\""s;
-    
+	using namespace std::string_literals;
+	auto input = "1234567890-_=+'`'[]{}~^/;?.><,\\|\""s;
+	
 	auto encripted_string = caesar_cipher::solve(input, 2);
 
 	ASSERT_EQ(encripted_string, input);
@@ -46,3 +46,8 @@ TEST_F(caesar_cipher_test, test_case_11) {
 } // namespace strings
 } // namespace bmgandre
 } // namespace hackerrank
+
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

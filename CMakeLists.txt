@@ -15,6 +15,7 @@ include(${CMAKE_SOURCE_DIR}/scripts/cmake/conan_custom_setup.cmake)
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/hackerrank_challenge.cmake)
 
 compiler_check()
+enable_testing()
 
 if (USE_CONAN_LIBS)
 	include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)

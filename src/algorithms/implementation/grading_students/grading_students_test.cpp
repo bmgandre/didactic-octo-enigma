@@ -9,7 +9,7 @@ namespace implementation {
 using grading_students_test = hackerrank::bmgandre::tests::hackerrank_gtest;
 
 TEST_F(grading_students_test, test_case_1) {
-    input_stream << R"raw(
+	input_stream << R"raw(
 4
 73
 67
@@ -21,17 +21,17 @@ TEST_F(grading_students_test, test_case_1) {
 
 	std::string output = output_stream.str();
 
-    auto expected_output = R"raw(75
+	auto expected_output = R"raw(75
 67
 40
 33
 )raw";
 
-    ASSERT_EQ(output, expected_output);
+	ASSERT_EQ(output, expected_output);
 }
 
 TEST_F(grading_students_test, test_case_2) {
-    input_stream << R"raw(
+	input_stream << R"raw(
 4
 99
 67
@@ -39,22 +39,25 @@ TEST_F(grading_students_test, test_case_2) {
 33
 )raw";
 
-    grading_students::run();
+	grading_students::run();
 
-    std::string output = output_stream.str();
+	std::string output = output_stream.str();
 
-    auto expected_output = R"raw(100
+	auto expected_output = R"raw(100
 67
 40
 33
 )raw";
 
-    ASSERT_EQ(output, expected_output);
+	ASSERT_EQ(output, expected_output);
 }
-
 
 } // namespace algorithms
 } // namespace implementation
 } // namespace bmgandre
 } // namespace hackerrank
 
+int main(int argc, char** argv) {
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
