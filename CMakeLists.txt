@@ -5,7 +5,10 @@ project(hackerrank)
 
 set(CMAKE_BUILD_TYPE Debug)
 
-set(USE_CONAN_LIBS FALSE CACHE BOOL "Download Conan libraries")
+set(USE_CONAN_BOOST FALSE CACHE BOOL "Download Boost from Conan Repo")
+set(USE_CONAN_JSONCPP FALSE CACHE BOOL "Download JsonCpp from Conan Repo")
+set(USE_CONAN_GTEST FALSE CACHE BOOL "Download GTest from Conan Repo")
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 include(${CMAKE_SOURCE_DIR}/cmake/compiler_check.cmake)
@@ -15,16 +18,10 @@ include(${CMAKE_SOURCE_DIR}/cmake/conan_custom_setup.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/hackerrank_challenge.cmake)
 
 compiler_check()
+
 enable_testing()
 
-if (USE_CONAN_LIBS)
-	include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-	conan_custom_setup()
-else()
-	find_package(PkgConfig REQUIRED)
-	pkg_check_modules(JsonCpp REQUIRED jsoncpp>=1.9.4)
-	find_package(Boost 1.68.0)
-endif (USE_CONAN_LIBS)
+check_build_dependencies()
 
 include(CTest)
 
