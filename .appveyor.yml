@@ -60,8 +60,8 @@ build_script:
          cd build
          echo conan install ../.conan/conanfile_noboost.txt %conan_args%
          conan install ../.conan/conanfile_noboost.txt %conan_args%
-         echo cmake -G "%generator%" %arch% -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON -DBOOST_ROOT="%boost_root%" -DBOOST_LIBRARYDIR="%boost_lib%" -DBoost_USE_STATIC_LIBS=ON..
-         cmake -G "%generator%" %arch% -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON -DBOOST_ROOT="%boost_root%" -DBOOST_LIBRARYDIR="%boost_lib%" -DBoost_USE_STATIC_LIBS=ON..
+         echo cmake -G "%generator%" %arch% -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON -DBOOST_ROOT="%boost_root%" -DBOOST_LIBRARYDIR="%boost_lib%" -DBoost_USE_STATIC_LIBS=ON ..
+         cmake -G "%generator%" %arch% -DUSE_CONAN_JSONCPP=ON -DUSE_CONAN_GTEST=ON -DBOOST_ROOT="%boost_root%" -DBOOST_LIBRARYDIR="%boost_lib%" -DBoost_USE_STATIC_LIBS=ON ..
          echo msbuild /m hackerrank.sln /p:Configuration=%configuration% /p:Platform=%platform%
          msbuild /m hackerrank.sln /p:Configuration=%configuration% /p:Platform=%platform%
 
