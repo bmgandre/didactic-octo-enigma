@@ -16,6 +16,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/list_folders.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/project_add_all_folders.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/conan_custom_setup.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/hackerrank_challenge.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/build_dependencies.cmake)
 
 compiler_check()
 
