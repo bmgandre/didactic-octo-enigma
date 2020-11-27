@@ -23,9 +23,7 @@ matrix:
             - clang-11
             - cmake
             - lcov
-            - libjsoncpp-dev
             - libboost1.71-all-dev
-            - libgtest-dev
     - os: linux
       compiler: gcc
       env:
@@ -43,9 +41,7 @@ matrix:
             - g++-10
             - cmake
             - lcov
-            - libjsoncpp-dev
             - libboost1.71-all-dev
-            - libgtest-dev
 
 install:
   - "[ $CXX = g++ ] && export CXX=g++-10 || true"
@@ -58,6 +54,7 @@ script:
   - |
     mkdir build
     cd build
+    conan install ../.conan/conanfile_noboost.txt ${CONAN_ARGS}
     cmake -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS}" -DCMAKE_EXE_LINKER_FLAGS="${CMAKE_EXE_LINKER_FLAGS}" ..
     make -j
     make test ARGS="-j -V"
