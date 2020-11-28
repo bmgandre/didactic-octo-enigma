@@ -1,0 +1,2 @@
+hackerrank_challenge_solution(funny_string.cpp funny_string.h)
+hackerrank_challenge_test(funny_string_test.cpp)
