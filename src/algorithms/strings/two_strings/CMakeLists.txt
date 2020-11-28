@@ -1,0 +1,2 @@
+hackerrank_challenge_solution(two_strings.cpp two_strings.h)
+hackerrank_challenge_test(two_strings_test.cpp)
