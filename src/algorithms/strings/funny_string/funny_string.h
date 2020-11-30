@@ -1,5 +1,4 @@
-#ifndef FUNNY_STRING_H
-#define FUNNY_STRING_H
+#pragma once
 
 #include <string>
 
@@ -18,5 +17,3 @@ public:
 } // namespace strings
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // FUNNY_STRING_H

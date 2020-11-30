@@ -1,5 +1,4 @@
-#ifndef TWO_STRINGS_H
-#define TWO_STRINGS_H
+#pragma once
 
 #include <string>
 
@@ -18,5 +17,3 @@ public:
 } // namespace strings
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // TWO_STRINGS_H

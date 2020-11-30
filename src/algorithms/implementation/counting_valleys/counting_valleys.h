@@ -1,5 +1,4 @@
-#ifndef COUNTING_VALLEYS_H
-#define COUNTING_VALLEYS_H
+#pragma once
 
 #include <string>
 
@@ -18,5 +17,3 @@ public:
 } // namespace implementation
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // COUNTING_VALLEYS_H

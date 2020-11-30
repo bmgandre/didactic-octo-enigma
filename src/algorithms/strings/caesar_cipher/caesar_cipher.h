@@ -1,5 +1,4 @@
-#ifndef CAESAR_CIPHER_H
-#define CAESAR_CIPHER_H
+#pragma once
 
 #include <string>
 
@@ -18,5 +17,3 @@ public:
 } // namespace strings
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // CAESAR_CIPHER_H
