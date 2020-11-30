@@ -1,0 +1,2 @@
+hackerrank_challenge_solution(library_fine.cpp library_fine.h)
+hackerrank_challenge_test(library_fine_test.cpp)
