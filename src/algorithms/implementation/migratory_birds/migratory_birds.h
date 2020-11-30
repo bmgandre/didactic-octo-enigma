@@ -1,5 +1,5 @@
-#ifndef MIGRATORY_BIRDS_H
-#define MIGRATORY_BIRDS_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,12 +8,10 @@ namespace implementation {
 class migratory_birds
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // MIGRATORY_BIRDS_H

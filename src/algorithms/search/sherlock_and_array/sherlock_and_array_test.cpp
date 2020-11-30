@@ -12,7 +12,7 @@ TEST_F(sherlock_and_array_test, test_case_1) {
 	input_stream << "2 3 1 2 3 4 1 2 3 3";
 	input_stream << std::endl;
 	
-	sherlock_and_array::run();
+	sherlock_and_array::solve();
 	
 	std::string output = output_stream.str();
 	
@@ -23,7 +23,7 @@ TEST_F(sherlock_and_array_test, test_case_6) {
 	input_stream << "10 1 1 1 2 1 3 2 1 2 3 1 4 1 3 1 5 1 1 234 1 20000 3 6 23 6 1 1";
 	input_stream << std::endl;
 	
-	sherlock_and_array::run();
+	sherlock_and_array::solve();
 	
 	std::string output = output_stream.str();
 	

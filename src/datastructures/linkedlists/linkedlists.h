@@ -1,11 +1,13 @@
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace datastructures {
 namespace linkedlists {
 
 struct Node {
-    int data;
-    struct Node *next;
+	int data;
+	struct Node *next;
 };
 
 Node* InsertNth(Node *head, int data, int position);

@@ -1,5 +1,5 @@
-#ifndef DIVISIBLE_SUM_PAIRS_H
-#define DIVISIBLE_SUM_PAIRS_H
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace implementation {
 class divisible_sum_pairs
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // DIVISIBLE_SUM_PAIRS_H
-

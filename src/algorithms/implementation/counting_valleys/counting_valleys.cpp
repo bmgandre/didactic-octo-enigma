@@ -4,6 +4,9 @@
 
 using hackerrank::bmgandre::algorithms::implementation::counting_valleys;
 
+/// Practice>Algorithms>Implementation>Counting Valleys
+///
+/// https://www.hackerrank.com/challenges/counting-valleys
 int counting_valleys::solve(int n, std::string s)
 {
 	auto height = 0;

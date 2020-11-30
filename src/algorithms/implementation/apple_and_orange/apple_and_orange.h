@@ -1,5 +1,5 @@
-#ifndef APPLE_AND_ORANGE_H
-#define APPLE_AND_ORANGE_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace implementation {
 class apple_and_orange
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // APPLE_AND_ORANGE_H
-

@@ -1,5 +1,5 @@
-#ifndef BIRTHDAY_CAKE_CANDLES_H
-#define BIRTHDAY_CAKE_CANDLES_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace warmup {
 class birthday_cake_candles
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // BIRTHDAY_CAKE_CANDLES_H
-

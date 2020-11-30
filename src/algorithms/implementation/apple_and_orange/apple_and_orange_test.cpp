@@ -16,7 +16,7 @@ TEST_F(apple_and_orange_test, test_case_1) {
                           5  -6
 )raw";
 
-	apple_and_orange::run();
+	apple_and_orange::solve();
 
 	std::string output = output_stream.str();
 	auto expected_output = "1\n1\n";
@@ -24,8 +24,8 @@ TEST_F(apple_and_orange_test, test_case_1) {
 	ASSERT_EQ(output, expected_output);
 }
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 

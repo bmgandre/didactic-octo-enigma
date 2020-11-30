@@ -5,6 +5,9 @@
 
 using hackerrank::bmgandre::algorithms::strings::funny_string;
 
+/// Practice>Algorithms>Strings>Funny String
+///
+/// https://www.hackerrank.com/challenges/funny-string
 std::string funny_string::solve(std::string input)
 {
 	std::string reverse;

@@ -1,5 +1,5 @@
-#ifndef CUT_THE_STICKS_H
-#define CUT_THE_STICKS_H
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace implementation {
 class cut_the_sticks
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // CUT_THE_STICKS_H
-

@@ -10,7 +10,7 @@ using kangaroo_test = hackerrank::bmgandre::tests::hackerrank_gtest;
 
 TEST_F(kangaroo_test, test_case_1) {
 	input_stream << "0 3 4 2";
-	kangaroo::run();
+	kangaroo::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "YES\n");
@@ -18,7 +18,7 @@ TEST_F(kangaroo_test, test_case_1) {
 
 TEST_F(kangaroo_test, test_case_2) {
 	input_stream << "14 4 98 2";
-	kangaroo::run();
+	kangaroo::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "YES\n");
@@ -26,14 +26,14 @@ TEST_F(kangaroo_test, test_case_2) {
 
 TEST_F(kangaroo_test, test_case_3) {
 	input_stream << "21 6 47 3";
-	kangaroo::run();
+	kangaroo::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "NO\n");
 }
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 

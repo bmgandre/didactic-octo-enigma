@@ -13,7 +13,7 @@ TEST_F(birthday_chocolate_test, test_case_1) {
 				 << "1 2 1 3 2" << std::endl
 				 << "3 2" << std::endl;
 				 
-	birthday_chocolate::run();
+	birthday_chocolate::solve();
 
 	std::string output = output_stream.str();
 	
@@ -25,7 +25,7 @@ TEST_F(birthday_chocolate_test, test_case_2) {
 				 << "1 1 1 1 1 1" << std::endl
 				 << "3 2" << std::endl;
 
-	birthday_chocolate::run();
+	birthday_chocolate::solve();
 
 	std::string output = output_stream.str();
 	
@@ -37,15 +37,15 @@ TEST_F(birthday_chocolate_test, test_case_3) {
 				 << "4" << std::endl
 				 << "4 1" << std::endl;
 
-	birthday_chocolate::run();
+	birthday_chocolate::solve();
 
 	std::string output = output_stream.str();
 	
 	ASSERT_EQ(output, "1\n");
 }
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 

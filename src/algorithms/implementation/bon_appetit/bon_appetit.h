@@ -1,5 +1,5 @@
-#ifndef BON_APPETIT_H
-#define BON_APPETIT_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,12 +8,10 @@ namespace implementation {
 class bon_appetit
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // BON_APPETIT_H

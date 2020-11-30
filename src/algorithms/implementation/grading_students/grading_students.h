@@ -1,5 +1,5 @@
-#ifndef GRADING_STUDENTS_H
-#define GRADING_STUDENTS_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace implementation {
 class grading_students
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // GRADING_STUDENTS_H
-

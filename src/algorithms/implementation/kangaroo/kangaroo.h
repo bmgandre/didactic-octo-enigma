@@ -1,5 +1,5 @@
-#ifndef KANGAROO_H
-#define KANGAROO_H
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace implementation {
 class kangaroo
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // KANGAROO_H
-

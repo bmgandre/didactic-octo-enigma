@@ -1,5 +1,5 @@
-#ifndef BETWEEN_TWO_SETS_H
-#define BETWEEN_TWO_SETS_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace implementation {
 class between_two_sets
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // BETWEEN_TWO_SETS_H
-

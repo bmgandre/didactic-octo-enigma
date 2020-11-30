@@ -1,19 +1,16 @@
-#ifndef VALID_PAN_FORMAT_H
-#define VALID_PAN_FORMAT_H
+#pragma once
 
 namespace hackerrank {
 namespace bmgandre {
-namespace algorithms {
 namespace regex {
+namespace applications {
 
 class valid_pan_format {
 public:
-    static void run();
+	static void solve();
 };
 
+} // namespace applications
 } // namespace regex
-} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // VALID_PAN_FORMAT_H

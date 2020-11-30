@@ -1,5 +1,5 @@
-#ifndef PLUS_MINUS_H
-#define PLUS_MINUS_H 
+#pragma once 
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace warmup {
 class plus_minus
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // PLUS_MINUS_H
-

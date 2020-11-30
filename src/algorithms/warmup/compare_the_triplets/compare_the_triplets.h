@@ -1,5 +1,4 @@
-#ifndef COMPARE_THE_TRIPLETS_H
-#define COMPARE_THE_TRIPLETS_H
+#pragma once
 
 namespace hackerrank {
 namespace bmgandre {
@@ -8,12 +7,10 @@ namespace warmup {
 
 class compare_the_triplets {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace regex
+} // namespace warmup
 } // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // COMPARE_THE_TRIPLETS_H

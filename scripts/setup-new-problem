@@ -62,11 +62,14 @@ function write_header_file {
 	for ns in ${p_ns//::/ }
 	do
 		ns_begin="$ns_begin\nnamespace $ns {"
+	done
+
+	for ns in $(echo ${p_ns//::/ } | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }' )
+	do
 		ns_end="${ns_end}\n} // namespace $ns"
 	done
 
-	echo -ne "#ifndef ${problem_name^^}_H
-#define ${problem_name^^}_H
+	echo -ne "#pragma once
 
 namespace hackerrank {
 namespace bmgandre {${ns_begin}
@@ -79,8 +82,6 @@ public:
 ${ns_end}
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // ${problem_name^^}_H
 " > $header_file
 }
 
@@ -114,6 +115,10 @@ function write_test_file {
 	for ns in ${p_ns//::/ }
 	do
 		ns_begin="$ns_begin\nnamespace $ns {"
+	done
+
+	for ns in $(echo ${p_ns//::/ } | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }' )
+	do
 		ns_end="${ns_end}\n} // namespace $ns"
 	done
 
@@ -132,7 +137,6 @@ TEST_F(${problem_name}_test, test_case_1) {
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, \"TEST OUTPUT\");
 }
-
 ${ns_end}
 } // namespace bmgandre
 } // namespace hackerrank

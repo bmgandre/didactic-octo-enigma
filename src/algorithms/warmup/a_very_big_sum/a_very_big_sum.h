@@ -1,5 +1,5 @@
-#ifndef A_VERY_BIG_SUM_H
-#define A_VERY_BIG_SUM_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace warmup {
 class a_very_big_sum
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // A_VERY_BIG_SUM_H
-

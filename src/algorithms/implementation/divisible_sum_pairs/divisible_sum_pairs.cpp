@@ -5,26 +5,28 @@
 
 using hackerrank::bmgandre::algorithms::implementation::divisible_sum_pairs;
 
-void divisible_sum_pairs::run()
+/// Practice>Algorithms>Implementation>Divisible Sum Pairs
+///
+/// https://www.hackerrank.com/challenges/divisible-sum-pairs
+void divisible_sum_pairs::solve()
 {
-    auto n = 0, k = 0;
-    std::cin >> n >> k;
+	auto n = 0, k = 0;
+	std::cin >> n >> k;
 
-    std::vector<int> a(n);
-    for (auto i = 0; i < n; i++)
-    {
-        std::cin >> a[i];
-    }
+	std::vector<int> a(n);
+	for (auto i = 0; i < n; i++)
+	{
+		std::cin >> a[i];
+	}
 
-    auto valid_pairs = 0;
-    for (auto i = 0; i < n; i++) {
-        for (auto j = i + 1; j < n; j++) {
-            if ((a[i] + a[j]) % k == 0) {
-                valid_pairs++;
-            }
-        }
-    }
+	auto valid_pairs = 0;
+	for (auto i = 0; i < n; i++) {
+		for (auto j = i + 1; j < n; j++) {
+			if ((a[i] + a[j]) % k == 0) {
+				valid_pairs++;
+			}
+		}
+	}
 
-    std::cout << valid_pairs << std::endl;
+	std::cout << valid_pairs << std::endl;
 }
-
