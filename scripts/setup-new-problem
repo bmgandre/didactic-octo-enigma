@@ -77,7 +77,7 @@ namespace bmgandre {${ns_begin}
 class ${problem_name}
 {
 public:
-    static void solve();
+	static void solve();
 };
 ${ns_end}
 } // namespace bmgandre
