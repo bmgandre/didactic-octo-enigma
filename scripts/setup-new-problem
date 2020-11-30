@@ -95,7 +95,7 @@ function write_source_file {
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::${problem_ns};
+using namespace hackerrank::bmgandre::${problem_ns%::*};
 
 void ${problem_name}::solve()
 {

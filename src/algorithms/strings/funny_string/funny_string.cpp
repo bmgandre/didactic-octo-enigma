@@ -3,7 +3,7 @@
 #include <string>
 #include <algorithm>
 
-using hackerrank::bmgandre::algorithms::strings::funny_string;
+using namespace hackerrank::bmgandre::algorithms::strings;
 
 /// Practice>Algorithms>Strings>Funny String
 ///

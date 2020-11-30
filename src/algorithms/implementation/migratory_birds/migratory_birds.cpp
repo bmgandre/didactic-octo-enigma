@@ -4,7 +4,7 @@
 #include <map>
 #include <queue>
 
-using hackerrank::bmgandre::algorithms::implementation::migratory_birds;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Migratory Birds
 ///

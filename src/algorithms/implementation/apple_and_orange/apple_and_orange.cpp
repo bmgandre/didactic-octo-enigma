@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-using hackerrank::bmgandre::algorithms::implementation::apple_and_orange;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Apple and Orange
 ///

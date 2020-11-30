@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-using hackerrank::bmgandre::algorithms::implementation::birthday_chocolate;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Sub-array Division
 ///

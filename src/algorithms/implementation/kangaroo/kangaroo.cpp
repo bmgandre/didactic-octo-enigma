@@ -1,7 +1,7 @@
 #include "kangaroo.h"
 #include <iostream>
 
-using hackerrank::bmgandre::algorithms::implementation::kangaroo;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Number Line Jumps
 ///

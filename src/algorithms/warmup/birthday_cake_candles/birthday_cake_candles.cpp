@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::warmup::birthday_cake_candles;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
 /// Practice>Algorithms>Warmup>Birthday Cake Candles
 ///

@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::warmup::diagonal_difference;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
 /// Practice>Algorithms>Warmup>Diagonal Difference
 ///

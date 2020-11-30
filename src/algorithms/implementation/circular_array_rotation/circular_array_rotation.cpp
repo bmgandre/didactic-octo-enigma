@@ -3,7 +3,7 @@
 #include <string>
 #include <deque>
 
-using hackerrank::bmgandre::algorithms::implementation::circular_array_rotation;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Circular Array Rotation
 ///

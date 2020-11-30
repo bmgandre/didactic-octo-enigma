@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-using hackerrank::bmgandre::algorithms::implementation::divisible_sum_pairs;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Divisible Sum Pairs
 ///

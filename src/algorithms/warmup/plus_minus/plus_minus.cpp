@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::warmup::plus_minus;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
 /// Practice>Algorithms>Warmup>Plus Minus
 ///

@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::implementation::counting_valleys;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Counting Valleys
 ///

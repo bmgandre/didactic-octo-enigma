@@ -3,7 +3,7 @@
 #include <string>
 #include <limits>
 
-using hackerrank::bmgandre::algorithms::implementation::breaking_the_records;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Breaking the Records
 ///

@@ -4,7 +4,7 @@
 #include <sstream>
 #include <algorithm>
 
-using hackerrank::bmgandre::algorithms::strings::caesar_cipher;
+using namespace hackerrank::bmgandre::algorithms::strings;
 
 /// Practice>Algorithms>Strings>Caesar Cipher
 ///

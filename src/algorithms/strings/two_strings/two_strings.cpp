@@ -4,7 +4,7 @@
 #include <map>
 #include <algorithm>
 
-using hackerrank::bmgandre::algorithms::strings::two_strings;
+using namespace hackerrank::bmgandre::algorithms::strings;
 
 const unsigned short mask_left = 1;
 const unsigned short mask_right = 2;

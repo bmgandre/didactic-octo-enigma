@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <vector>
 
-using hackerrank::bmgandre::algorithms::implementation::cut_the_sticks;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Cut the sticks
 ///

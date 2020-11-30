@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::warmup::simple_array_sum;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
 /// Practice>Algorithms>Warmup>Simple Array Sum
 ///

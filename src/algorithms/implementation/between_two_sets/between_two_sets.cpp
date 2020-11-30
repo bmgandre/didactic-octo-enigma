@@ -4,7 +4,7 @@
 #include <queue>
 #include <limits>
 
-using hackerrank::bmgandre::algorithms::implementation::between_two_sets;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Between Two Sets
 ///

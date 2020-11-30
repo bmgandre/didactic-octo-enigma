@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::implementation::day_of_the_programmer;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Day of the Programmer
 ///

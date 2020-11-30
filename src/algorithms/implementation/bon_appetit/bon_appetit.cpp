@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::implementation::bon_appetit;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Bill Division
 ///

@@ -1,8 +1,7 @@
 #include "angry_professor.h"
 #include <iostream>
 
-using hackerrank::bmgandre::algorithms::implementation::angry_professor;
-
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Angry Professor
 ///

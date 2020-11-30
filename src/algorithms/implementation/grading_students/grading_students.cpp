@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-using hackerrank::bmgandre::algorithms::implementation::grading_students;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 /// Practice>Algorithms>Implementation>Grading Students
 ///

@@ -4,7 +4,7 @@
 #include <chrono>
 #include <ctime>
 
-using hackerrank::bmgandre::algorithms::implementation::library_fine;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
 int library_fine::solve(LibDate returnedDate, LibDate dueDate)
 {

@@ -4,7 +4,7 @@
 #include <string>
 #include <regex>
 
-using hackerrank::bmgandre::algorithms::warmup::time_conversion;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
 /// Practice>Algorithms>Warmup>Time Conversion
 ///

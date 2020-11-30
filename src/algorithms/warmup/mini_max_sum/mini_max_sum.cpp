@@ -4,7 +4,7 @@
 #include <queue>
 #include <functional>
 
-using hackerrank::bmgandre::algorithms::warmup::mini_max_sum;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
 /// Practice>Algorithms>Warmup>Mini-Max Sum
 ///

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::warmup::staircase;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
 /// Practice>Algorithms>Warmup>Staircase
 ///
