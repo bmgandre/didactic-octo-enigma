@@ -1,5 +1,5 @@
-#ifndef DIAGONAL_DIFFERENCE_H
-#define DIAGONAL_DIFFERENCE_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace warmup {
 class diagonal_difference
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // DIAGONAL_DIFFERENCE_H
-

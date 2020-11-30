@@ -13,14 +13,14 @@ TEST_F(plus_minus_test, test_case_1) {
 				 << "-4 3 -9 0 4 1" << std::endl;
 
 	output_stream << std::fixed;
-	plus_minus::run();
+	plus_minus::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "0.500000\n0.333333\n0.166667\n");
 }
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 

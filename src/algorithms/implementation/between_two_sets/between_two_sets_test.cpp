@@ -14,14 +14,14 @@ TEST_F(between_two_sets_test, test_case_1) {
 	  2 4
 	  16 32 96
 	)raw";
-	between_two_sets::run();
+	between_two_sets::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "3\n");
 }
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 

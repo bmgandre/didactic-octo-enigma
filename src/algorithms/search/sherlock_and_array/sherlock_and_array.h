@@ -1,5 +1,4 @@
-#ifndef SHERLOCK_AND_ARRAY_H
-#define SHERLOCK_AND_ARRAY_H
+#pragma once
 
 namespace hackerrank {
 namespace bmgandre {
@@ -8,12 +7,10 @@ namespace search {
 
 class sherlock_and_array {
 public:
-    static void run();
+	static void solve();
 };
 
 } // namespace search
 } // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // SHERLOCK_AND_ARRAY_H

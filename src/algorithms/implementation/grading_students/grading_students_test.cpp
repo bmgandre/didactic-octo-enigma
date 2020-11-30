@@ -17,7 +17,7 @@ TEST_F(grading_students_test, test_case_1) {
 33
 )raw";
 
-	grading_students::run();
+	grading_students::solve();
 
 	std::string output = output_stream.str();
 
@@ -39,7 +39,7 @@ TEST_F(grading_students_test, test_case_2) {
 33
 )raw";
 
-	grading_students::run();
+	grading_students::solve();
 
 	std::string output = output_stream.str();
 
@@ -52,8 +52,8 @@ TEST_F(grading_students_test, test_case_2) {
 	ASSERT_EQ(output, expected_output);
 }
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 

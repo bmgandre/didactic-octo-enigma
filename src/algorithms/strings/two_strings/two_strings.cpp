@@ -10,6 +10,9 @@ const unsigned short mask_left = 1;
 const unsigned short mask_right = 2;
 const unsigned short mask_both = 3;
 
+/// Practice>Algorithms>Strings>Two Strings
+///
+/// https://www.hackerrank.com/challenges/two-strings
 std::string two_strings::solve(std::string left, std::string right)
 {
 	std::map<char, int> char_map;

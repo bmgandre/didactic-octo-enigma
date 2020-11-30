@@ -1,5 +1,4 @@
-#ifndef FIND_POINT_H
-#define FIND_POINT_H
+#pragma once
 
 namespace hackerrank {
 namespace bmgandre {
@@ -12,5 +11,3 @@ void find_symmetric_point();
 } // namespace mathematics
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // FIND_POINT_H

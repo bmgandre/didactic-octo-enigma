@@ -1,5 +1,5 @@
-#ifndef MINI_MAX_SUM_H
-#define MINI_MAX_SUM_H 
+#pragma once 
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace warmup {
 class mini_max_sum
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // MINI_MAX_SUM_H
-

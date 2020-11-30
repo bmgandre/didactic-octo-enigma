@@ -1,5 +1,5 @@
-#ifndef BIRTHDAY_CHOCOLATE_H
-#define BIRTHDAY_CHOCOLATE_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,12 +8,10 @@ namespace implementation {
 class birthday_chocolate
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // BIRTHDAY_CHOCOLATE_H

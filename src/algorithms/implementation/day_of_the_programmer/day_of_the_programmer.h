@@ -1,5 +1,5 @@
-#ifndef DAY_OF_THE_PROGRAMMER_H
-#define DAY_OF_THE_PROGRAMMER_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,12 +8,10 @@ namespace implementation {
 class day_of_the_programmer
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // DAY_OF_THE_PROGRAMMER_H

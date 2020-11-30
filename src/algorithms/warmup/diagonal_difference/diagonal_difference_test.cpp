@@ -13,14 +13,14 @@ TEST_F(diagonal_difference_test, test_case_1) {
 	input_stream << "11 2   4" << std::endl;
 	input_stream << " 4 5   6" << std::endl;
 	input_stream << "10 8 -12" << std::endl;
-	diagonal_difference::run();
+	diagonal_difference::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "15\n");
 }
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 
