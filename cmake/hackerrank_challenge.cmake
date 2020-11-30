@@ -25,6 +25,8 @@ macro(hackerrank_challenge_solution)
 endmacro()
 
 macro(hackerrank_challenge_test)
+	include(GoogleTest)
+
 	get_filename_component(ProjectId ${CMAKE_CURRENT_LIST_DIR} NAME)
 
 	get_filename_component(ProjectTest ${CMAKE_CURRENT_LIST_DIR} NAME)
@@ -48,6 +50,7 @@ macro(hackerrank_challenge_test)
 	set_property(TARGET ${ProjectTest} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 	add_test(${ProjectTest} ${ProjectTest})
+	gtest_discover_tests(${ProjectTest})
 
 	file(GLOB GTEST_BINARIES "${PROJECT_BINARY_DIR}/bin/gtest*")
 	file(COPY ${GTEST_BINARIES} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
