@@ -1,5 +1,5 @@
-#ifndef SIMPLE_ARRAY_SUM_H
-#define SIMPLE_ARRAY_SUM_H
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace warmup {
 class simple_array_sum
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // SIMPLE_ARRAY_SUM_H
-

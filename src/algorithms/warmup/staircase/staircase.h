@@ -1,5 +1,5 @@
-#ifndef STAIRCASE_H
-#define STAIRCASE_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace warmup {
 class staircase
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace warmup
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // STAIRCASE_H
-

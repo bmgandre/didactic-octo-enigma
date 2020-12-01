@@ -10,7 +10,7 @@ using day_of_the_programmer_test = hackerrank::bmgandre::tests::hackerrank_gtest
 
 TEST_F(day_of_the_programmer_test, test_case_0) {
 	input_stream << "2017" << std::endl;
-	day_of_the_programmer::run();
+	day_of_the_programmer::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "13.09.2017\n");
@@ -18,14 +18,14 @@ TEST_F(day_of_the_programmer_test, test_case_0) {
 
 TEST_F(day_of_the_programmer_test, test_case_1) {
 	input_stream << "2016" << std::endl;
-	day_of_the_programmer::run();
+	day_of_the_programmer::solve();
 
 	std::string output = output_stream.str();
 	ASSERT_EQ(output, "12.09.2016\n");
 }
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
 

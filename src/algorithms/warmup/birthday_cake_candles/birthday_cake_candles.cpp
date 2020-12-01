@@ -2,9 +2,12 @@
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::warmup::birthday_cake_candles;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
-void birthday_cake_candles::run()
+/// Practice>Algorithms>Warmup>Birthday Cake Candles
+///
+/// https://www.hackerrank.com/challenges/birthday-cake-candles
+void birthday_cake_candles::solve()
 {
     auto n = 0;
     std::cin >> n;

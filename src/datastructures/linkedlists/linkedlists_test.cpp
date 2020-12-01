@@ -5,7 +5,7 @@ namespace hackerrank {
 namespace bmgandre {
 namespace datastructures {
 namespace linkedlists {
-	
+
 using linkedlists_test = hackerrank::bmgandre::tests::hackerrank_gtest;
 
 TEST_F(linkedlists_test, test_case_insertnth) {

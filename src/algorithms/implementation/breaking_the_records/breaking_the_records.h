@@ -1,5 +1,5 @@
-#ifndef BREAKING_BEST_AND_WORST_RECORDS_H
-#define BREAKING_BEST_AND_WORST_RECORDS_H 
+#pragma once
+
 namespace hackerrank {
 namespace bmgandre {
 namespace algorithms {
@@ -8,13 +8,10 @@ namespace implementation {
 class breaking_the_records
 {
 public:
-    static void run();
+	static void solve();
 };
 
-} // namespace algorithms
 } // namespace implementation
+} // namespace algorithms
 } // namespace bmgandre
 } // namespace hackerrank
-
-#endif // BREAKING_BEST_AND_WORST_RECORDS_H
-

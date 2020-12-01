@@ -3,9 +3,12 @@
 #include <string>
 #include <vector>
 
-using hackerrank::bmgandre::algorithms::implementation::birthday_chocolate;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
-void birthday_chocolate::run()
+/// Practice>Algorithms>Implementation>Sub-array Division
+///
+/// https://www.hackerrank.com/challenges/the-birthday-bar
+void birthday_chocolate::solve()
 {
 	auto n = 0; // the number of squares in the chocolate bar
 	std::cin >> n;

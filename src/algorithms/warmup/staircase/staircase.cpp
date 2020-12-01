@@ -2,15 +2,17 @@
 #include <iostream>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::warmup::staircase;
+using namespace hackerrank::bmgandre::algorithms::warmup;
 
-void staircase::run()
+/// Practice>Algorithms>Warmup>Staircase
+///
+/// https://www.hackerrank.com/challenges/staircase
+void staircase::solve()
 {
-    auto n = 0;
-    std::cin >> n;
+	auto n = 0;
+	std::cin >> n;
 
-    for (auto i = 0, j = 1; i < n; i++, j++) {
-        std::cout << std::string(n - j, ' ') << std::string(j, '#') << std::endl;
-    }
+	for (auto i = 0, j = 1; i < n; i++, j++) {
+		std::cout << std::string(n - j, ' ') << std::string(j, '#') << std::endl;
+	}
 }
-

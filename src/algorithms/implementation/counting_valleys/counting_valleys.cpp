@@ -2,8 +2,11 @@
 #include <algorithm>
 #include <string>
 
-using hackerrank::bmgandre::algorithms::implementation::counting_valleys;
+using namespace hackerrank::bmgandre::algorithms::implementation;
 
+/// Practice>Algorithms>Implementation>Counting Valleys
+///
+/// https://www.hackerrank.com/challenges/counting-valleys
 int counting_valleys::solve(int n, std::string s)
 {
 	auto height = 0;
